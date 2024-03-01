@@ -73,7 +73,7 @@ public class ObservableAsPropertyWeaver
             return;
         }
 
-        var reactiveObject = ModuleDefinition.FindType("ReactiveUI", "ReactiveObject", reactiveUI);
+        var reactiveObject = ModuleDefinition.FindType("ReactiveUI", "IReactiveObject", reactiveUI);
 
         // The types we will scan are subclasses of ReactiveObject
         var targetTypes = ModuleDefinition.GetAllTypes().Where(x => x.BaseType is not null && reactiveObject.IsAssignableFrom(x.BaseType));

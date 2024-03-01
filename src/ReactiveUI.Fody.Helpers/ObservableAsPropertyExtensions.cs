@@ -37,7 +37,7 @@ public static class ObservableAsPropertyExtensions
         Expression<Func<TObj, TRet>> property,
         bool deferSubscription = false,
         IScheduler? scheduler = null)
-        where TObj : ReactiveObject
+        where TObj : class, IReactiveObject
     {
 #if NET6_0_OR_GREATER
         ArgumentNullException.ThrowIfNull(item);
@@ -88,7 +88,7 @@ public static class ObservableAsPropertyExtensions
         TRet initialValue,
         bool deferSubscription = false,
         IScheduler? scheduler = null)
-        where TObj : ReactiveObject
+        where TObj : class, IReactiveObject
     {
 #if NET6_0_OR_GREATER
         ArgumentNullException.ThrowIfNull(item);
